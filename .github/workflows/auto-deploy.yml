@@ -21,8 +21,8 @@ jobs:
         run: |
             DATE=$(date "+%Y/%m/%d %H:%M:%S")
             echo "${DATE}" > README.md
-            git config --global user.email "cherrrry1@users.noreply.github.com"
-            git config --global user.name "cherrrry1"
+            git config --global user.email "byt16668@163.com"
+            git config --global user.name "lslove10010"
             git add README.md
             git commit -m "Auto deploy by Github Actions, ${DATE}"
             git push --force
