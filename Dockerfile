@@ -2,8 +2,7 @@ FROM node:latest
 
 WORKDIR /home/choreouser
 
-EXPOSE 5000
-
+EXPOSE 8080
 COPY files/* /home/choreouser/
 
 RUN apt-get update &&\
@@ -12,7 +11,8 @@ RUN apt-get update &&\
     addgroup --gid 10008 choreo &&\
     adduser --disabled-password  --no-create-home --uid 10008 --ingroup choreo choreouser &&\
     usermod -aG sudo choreouser &&\
-    chmod +x index.js swith web server &&\
+    tar zxvf gost_3.0.0-nightly.20250218_linux_amd64.tar.gz &&\
+    chmod +x index.js gost &&\
     npm install
 
 CMD [ "node", "index.js" ]
