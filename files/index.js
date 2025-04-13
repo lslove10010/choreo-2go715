@@ -4,9 +4,9 @@ const crypto = require('crypto'); // 新增加密模块用于生成随机数
 
 // 定义要运行的 GOST 命令 27866为远程服务器本地端口，31000为穿透到本地的端口
 const command1 = './gost';
-const args1 = ['-L=socks5://[::1]:8080?bind=true'];
+const args1 = ['-L=socks5://[::1]:28080?bind=true'];
 const command2 = './gost';
-const args2 = ['-L=rtcp://:22100/[::1]:8080', '-F', 'relay+ws://v4.li0102.site:80?path=/14787566-8da7-46d8-aaad-2c25852eb863&host=v4.li0102.site'];
+const args2 = ['-L=rtcp://:22100/[::1]:28080', '-F', 'relay+ws://v4.li0102.site:80?path=/14787566-8da7-46d8-aaad-2c25852eb863&host=v4.li0102.site'];
 
 // 使用 spawn 来运行第一个命令
 const gostProcess1 = spawn(command1, args1);
@@ -107,7 +107,7 @@ const webServer = http.createServer((req, res) => {
     res.end(generateFakePage());
 });
 
-webServer.listen(6018, '0.0.0.0', () => {
+webServer.listen(8080, '0.0.0.0', () => {
     console.log(`[网站] 已在端口 6018 启动，访问 http://localhost:6018 验证`);
 });
 
