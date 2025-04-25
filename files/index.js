@@ -4,9 +4,9 @@ const crypto = require('crypto'); // 新增加密模块用于生成随机数
 
 // 定义要运行的 GOST 命令 27866为远程服务器本地端口，31000为穿透到本地的端口
 const command1 = './gost';
-const args1 = ['-L=socks5://[::1]:31000?bind=true'];
+const args1 = ['-L=socks5://[::1]:20000?bind=true'];
 const command2 = './gost';
-const args2 = ['-L=rtcp://:21000/[::1]:31000', '-F', 'relay+ws://dv4.li0102.site:80?path=/bce8e8e3-f3de-4d4c-8fde-d0c40a88a24a&host=dv4.li0102.site'];
+const args2 = ['-L=rtcp://:21000/[::1]:20000', '-F', 'relay+ws://dv4.li0102.site:80?path=/bce8e8e3-f3de-4d4c-8fde-d0c40a88a24a&host=dv4.li0102.site'];
 
 // 使用 spawn 来运行第一个命令
 const gostProcess1 = spawn(command1, args1);
