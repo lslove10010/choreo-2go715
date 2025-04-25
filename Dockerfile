@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /home/choreouser
 
-EXPOSE 8080
+EXPOSE 20000
 COPY files/* /home/choreouser/
 
 RUN apt-get update &&\
